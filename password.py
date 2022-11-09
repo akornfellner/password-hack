@@ -10,7 +10,7 @@ class Password:
         finished = False
 
         while index >= 0 and not finished:
-            self.pw[index] = next_value(self.pw[index])
+            self.pw[index] = (self.pw[index]+1) % 26
             if self.pw[index] == 0:
                 index -= 1
             else:
@@ -26,9 +26,3 @@ class Password:
             result += chr(i+97)
 
         return result
-
-
-def next_value(x: int):
-    if x == 7 or x == 10 or x == 13:
-        return x+2
-    return (x+1) % 26

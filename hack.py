@@ -1,7 +1,7 @@
-from password import *
+import password
 import hashlib
 
-pw = Password("abcde")
+pw = password.Password("abcde")
 
 while True:
     hash = hashlib.md5(pw.encode())
